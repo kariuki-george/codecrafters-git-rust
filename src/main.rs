@@ -69,7 +69,7 @@ fn cat_file(mut file: String, opt: CatOpt) {
     // Decode the file
     // Print the contents
 
-    // file.insert(2, '/');
+    file.insert(2, '/');
 
     let contents = fs::read(file).expect("Unable to read the contents of the file");
 
