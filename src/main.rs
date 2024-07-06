@@ -11,7 +11,7 @@ pub struct Args {
 }
 
 fn main() {
-    println!("Logs from your program will appear here!");
+    eprintln!("Logs from your program will appear here!");
 
     let args = Args::parse();
 
@@ -70,6 +70,7 @@ fn cat_file(mut file: String, opt: CatOpt) {
     // Print the contents
 
     file.insert(2, '/');
+    file.insert_str(0, "./.git/objects/");
 
     let contents = fs::read(file).expect("Unable to read the contents of the file");
 
